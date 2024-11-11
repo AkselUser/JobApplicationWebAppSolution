@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "HttpRequestFunctionAppProject": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7174"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "DockerfileRunArguments": "--init",
+      "httpPort": 34071,
+      "useSSL": false
+    }
+  }
+}
