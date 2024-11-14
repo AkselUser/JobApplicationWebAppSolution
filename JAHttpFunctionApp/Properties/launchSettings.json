@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "JAHttpFunctionApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7050",
+      "launchBrowser": false
+    }
+  }
+}

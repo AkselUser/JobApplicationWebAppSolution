@@ -1,0 +1,37 @@
+﻿@page
+@model WeatherModel
+@{
+    ViewData["Title"] = "Should I wear a jacket";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>This page deals with jacketwearing</p>
+<p>Select the latitude and longitude where you live. </p>
+<p>Clicking the button triggers an Azure function App to send your coordinates to a web API and get the weather in that area. </p>
+
+<form method="post">
+    <input type="text" asp-for="Coordinates.Latitude" placeholder="Latitude" />
+    <input type="text" asp-for="Coordinates.Longitude" placeholder="Longitude" />
+    <button type="submit">Submit</button>
+</form>
+
+
+
+@* <form method="post">
+    <fieldset>
+        <legend>Add Coordinates</legend>
+        <div>
+            <label for="Latitude">Latitude:</label>
+            <input type="text" name="Latitude" value="" />
+        </div>
+        <div>
+            <label for="Longtitude">Longtitude:</label>
+            <input type="text" name="Longtitude" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form> *@
