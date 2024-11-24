@@ -4,34 +4,37 @@
     ViewData["Title"] = "Should I wear a jacket";
 }
 
+
+
 <h1>@ViewData["Title"]</h1>
 
 <p>This page deals with jacketwearing</p>
-<p>Select the latitude and longitude where you live. </p>
-<p>Clicking the button triggers an Azure function App to send your coordinates to a web API and get the weather in that area. </p>
+<p>Fill in the latitude and longitude where you live. </p>
+<p>Pressing the submit button will query a weather-API that returns the temperature and calculates if you should use a jacket. And the service is completely FREE!</p>
+<p>Default is 59/10 is Oslo</p>
 
 <form method="post">
-    <input type="text" asp-for="Coordinates.Latitude" placeholder="Latitude" />
-    <input type="text" asp-for="Coordinates.Longitude" placeholder="Longitude" />
-    <button type="submit">Submit</button>
-</form>
-
-
-
-@* <form method="post">
     <fieldset>
-        <legend>Add Coordinates</legend>
+        <legend>Coordinates</legend>
         <div>
-            <label for="Latitude">Latitude:</label>
-            <input type="text" name="Latitude" value="" />
+            <label for="latitude">Latitude:</label>
+            <input type="text" name="latitude" value="59" />
         </div>
         <div>
-            <label for="Longtitude">Longtitude:</label>
-            <input type="text" name="Longtitude" value="" />
+            <label for="longitude">Longitude:</label>
+            <input type="text" name="longitude" value="10" />
         </div>
         <div>
             <label>&nbsp;</label>
             <input type="submit" value="Submit" class="submit" />
         </div>
     </fieldset>
-</form> *@
+</form>
+@if (Model.ActionResultMessageText == string.Empty)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@Model.ActionResultAlertMessageText");
+        };
+    </script>
+}
